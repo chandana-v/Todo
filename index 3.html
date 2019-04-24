@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>
+     body   {
+            background:plum;
+        }
+    
+        </style>
+    </head>
+<body>
+    <h1> SHOWING DAY </h1>
+    <div>
+        <p id="day"></p>
+    </div>
+    <script>
+        var day;
+        switch (new Date().getDay())
+        {
+            case 0:
+                day="Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day ="Tuesday";
+                break;
+            case 3:
+                day = "wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;      
+        }
+        document.getElementById("day").innerText="Today is "+ day;
+    </script>
+</body>
+</html>

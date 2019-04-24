@@ -1,0 +1,35 @@
+index 1.html
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>COMPOUND INTEREST </h2>
+
+        <div> 
+    <label> Enter principal value:</label>
+    <input id="principal"/></div>
+    <div>
+  <label> Enter interest value:</label>
+    <input id="interest"/></body></div>
+    <div>
+    <label>Enter  months:</label>
+    <input id="months"/></div>
+    <button id="taskbtn" > calculate </button>
+ </div>
+ <p>The total amount is: </p>
+ <p id="Money"></p>
+ <script>
+        
+        var btnElem = document.getElementById("taskbtn");
+        btnElem.onclick = calculate;
+            function calculate() {
+                console.log("in calculate")
+                var principal = document.getElementById("principal" ).value;
+                var interest=document.getElementById("interest" ).value;
+                var months=document.getElementById("months").value;
+               var amount= principal * Math.pow( (1+ interest / 100) , months/12);
+               document.getElementById("Money").innerText=amount;
+                
+            }
+
+        </script>
+    </body>

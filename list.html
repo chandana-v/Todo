@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    table, th, td {
+border:1px solid black;
+border-collapse: collapse;
+        }
+    </style>
+    </head>
+<body>
+<h2> To do list </h2>
+<div>
+    <label>Enter Task Name:</label>
+    <input id="addInput"/>
+    <button id="taskBtn">Add</button>
+</div>
+<ul id="task-list"></ul>
+
+<script>
+  btn = document.getElementById("taskBtn")
+  btn.onclick = addItem;
+  
+  function addItem() {
+
+    var input = document.getElementById("addInput")
+    var list  = document.getElementById("task-list")
+    var existingTasks = [];
+    for (var i=0; i < list.children.length; i++ ) {
+        existingTasks.push(list.children[i].innerText) 
+    }
+    var list  = document.getElementById("task-list")
+
+    if (existingTasks.indexOf(input.value) > 0) {
+        alert("The task "+ input.value + " already exists.Please enter different task name!" );
+        input.value = "";
+    }
+
+    if (input.value != "" && existingTasks.indexOf(input.value) < 0 ) {
+        var li=document.createElement('li');
+        li.innerText  = input.value
+        list.appendChild(li)
+        input.value = "";
+    }
+  } 
+</script>
+</html> 

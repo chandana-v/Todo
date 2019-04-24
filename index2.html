@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Type  Number will get name </h2>
+        <div>
+            <label>Enter number:</label>
+            <input id="add-input"/>
+            <button id ="task-btn">Try it</button> 
+        </div>
+        <p id="numbertype"> Numbertype:</p>
+        <script>
+            var btnelem = document.getElementById("task-btn");
+            btnelem.onclick = Tryit;
+            function Tryit() {
+                var msg; 
+                var value= document.getElementById("add-input").value;
+                if (value % 2 === 0) {
+                    msg="even" ;
+                }
+                else if(value %3 ===0) {
+                    msg="dogs";
+                }
+                else if (value % 5 === 0) {
+                    msg = "cats";
+                }
+                else {
+                    msg = "Unknown Number Type";
+                }
+                document.getElementById("numbertype").innerText="Number Type: " + msg;
+            }
+                
+        </script>
+    </body>
+</html>
+
+
+
+ 
